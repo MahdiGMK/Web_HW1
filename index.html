@@ -16,6 +16,7 @@
         }
         td {
             border-left: 1px solid gray; /* Border only on the left of data cells */
+            border-right: 1px solid gray; /* Border only on the left of data cells */
             padding: 8px;
         }
     </style>
@@ -28,32 +29,34 @@
     <script lang="js" src="main.js"></script>
 </head>
 <body>
-    <input type="text" id="fee" placeholder="هزینه" />
-    <input type="text" id="count" placeholder="تعداد" />
-    <input type="text" id="discount" placeholder="تخفیف" />
-    <table>
-        <thead>
-            <tr>
-                <td>count*fee-discount</td>
-                <td>count+fee-discount</td>
-                <td>count/fee-discount</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <formula evaluator="count*fee-discount"></formula>
-                </td>
-                <td>
-                    <formula evaluator="count+fee-discount"></formula>
-                </td>
-                <td>
-                    <formula evaluator="count/fee-discount"></formula>
-                </td>
-            </tr>
-        </tbody>
-        <caption>
-            some random formulae for testing
-        </caption>
-    </table>
+    <center>
+        <input type="text" id="fee" placeholder="هزینه" />
+        <input type="text" id="count" placeholder="تعداد" />
+        <input type="text" id="discount" placeholder="تخفیف" />
+        <table>
+            <thead>
+                <tr>
+                    <td>count*fee-discount</td>
+                    <td>count+fee-discount</td>
+                    <td>count/fee-discount</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <formula evaluator="count*fee-discount"></formula>
+                    </td>
+                    <td>
+                        <formula evaluator="count+fee-discount"></formula>
+                    </td>
+                    <td>
+                        <formula evaluator="count/fee-discount"></formula>
+                    </td>
+                </tr>
+            </tbody>
+            <caption>
+                some random formulae for testing
+            </caption>
+        </table>
+    </center>
 </body>
