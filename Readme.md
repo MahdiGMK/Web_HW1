@@ -98,8 +98,12 @@ addEventListener("DOMContentLoaded", (event) => {
 
 ## نتیجه پیاده سازی
 
-<center>
+<!-- <center>
 <iframe src="index.html" width = 100%></iframe>
+</center> -->
+
+<center>
+    <img src="testpic.png"/>
 </center>
 
 همانطور که مشاهده میکنید، در این مثال این سه فرمول به درستی و به شکل
