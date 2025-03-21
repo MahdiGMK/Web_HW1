@@ -102,9 +102,7 @@ addEventListener("DOMContentLoaded", (event) => {
 <iframe src="index.html" width = 100%></iframe>
 </center> -->
 
-<center>
-    <img src="testpic.png"/>
-</center>
+[![](testpic.png)](index.html)
 
 همانطور که مشاهده میکنید، در این مثال این سه فرمول به درستی و به شکل
 بیدرنگ پردازش میشوند.
