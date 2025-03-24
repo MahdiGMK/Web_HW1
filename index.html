@@ -1,156 +1,203 @@
 <!doctype html>
-<head>
-    <style>
-        :root {
-            font-family: "Vazirmatn", sans-serif;
-            direction: rtl;
-            --primary-color: #6a1b9a;
-            --secondary-color: #ff8f00;
-            --accent-color: #7e57c2;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-            --border-radius: 8px;
-        }
+<html>
+    <head>
+        <style>
+            :root {
+                font-family: "Vazirmatn", sans-serif;
+                direction: rtl;
+                --primary-color: #6a1b9a;
+                --secondary-color: #ff8f00;
+                --secondary-light: #ffe0b2;
+                --accent-color: #7e57c2;
+                --text-color: #333;
+                --light-gray: #f5f5f5;
+                --border-radius: 8px;
+            }
 
-        body {
-            background-color: #fafafa;
-            margin: 0;
-            padding: 20px;
-            color: var(--text-color);
-        }
+            body {
+                background-color: #fafafa;
+                margin: 0;
+                padding: 20px;
+                color: var(--text-color);
+            }
 
-        center {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+            center {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 30px;
+                background-color: white;
+                border-radius: var(--border-radius);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                border-top: 5px solid var(--secondary-color);
+            }
 
-        input {
-            padding: 12px 15px;
-            margin: 0 8px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: "Vazirmatn", sans-serif;
-            font-size: 16px;
-            width: 120px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
+            .input-group {
+                margin-bottom: 25px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+                background-color: var(--secondary-light);
+                padding: 20px;
+                border-radius: var(--border-radius);
+                border-bottom: 3px solid var(--secondary-color);
+            }
 
-        input:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(126, 87, 194, 0.2);
-        }
+            input {
+                padding: 12px 15px;
+                border: 1px solid #ddd;
+                border-radius: var(--border-radius);
+                font-family: "Vazirmatn", sans-serif;
+                font-size: 16px;
+                width: 140px;
+                transition: all 0.3s ease;
+                text-align: center;
+                background-color: white;
+            }
 
-        input::placeholder {
-            color: #999;
-        }
+            input:focus {
+                outline: none;
+                border-color: var(--secondary-color);
+                box-shadow: 0 0 0 3px rgba(255, 143, 0, 0.2);
+            }
 
-        table {
-            width: 100%;
-            border-top: 2px solid var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.9em;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-        }
+            input::placeholder {
+                color: #777;
+            }
 
-        thead tr {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-        }
+            table {
+                width: 100%;
+                border-top: 2px solid var(--primary-color);
+                border-bottom: 2px solid var(--primary-color);
+                border-collapse: collapse;
+                margin: 30px 0;
+                font-size: 0.95em;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            }
 
-        th,
-        td {
-            padding: 12px 15px;
-            text-align: center;
-        }
+            thead tr {
+                background: linear-gradient(
+                    to right,
+                    var(--primary-color),
+                    var(--accent-color)
+                );
+                color: white;
+                text-align: center;
+            }
 
-        td {
-            border-left: 1px solid #e0e0e0;
-            border-right: 1px solid #e0e0e0;
-        }
+            th,
+            td {
+                padding: 14px 15px;
+                text-align: center;
+            }
 
-        tbody tr {
-            border-bottom: 1px solid #e0e0e0;
-        }
+            th {
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
 
-        tbody tr:nth-of-type(even) {
-            background-color: var(--light-gray);
-        }
+            td {
+                border-left: 1px solid #e0e0e0;
+                border-right: 1px solid #e0e0e0;
+            }
 
-        tbody tr:last-of-type {
-            border-bottom: 2px solid var(--primary-color);
-        }
+            tbody tr {
+                border-bottom: 1px solid #e0e0e0;
+                transition: all 0.2s ease;
+            }
 
-        tbody tr:hover {
-            background-color: rgba(126, 87, 194, 0.1);
-        }
+            tbody tr:nth-of-type(even) {
+                background-color: var(--light-gray);
+            }
 
-        caption {
-            caption-side: bottom;
-            padding: 10px;
-            font-style: italic;
-            color: #666;
-            margin-top: 15px;
-        }
+            tbody tr:last-of-type {
+                border-bottom: 2px solid var(--primary-color);
+            }
 
-        formula {
-            font-weight: bold;
-            color: var(--primary-color);
-        }
+            tbody tr:hover {
+                background-color: rgba(255, 143, 0, 0.08);
+                transform: translateX(-3px);
+            }
 
-        .input-group {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-    </style>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.2.1/math.js"
-        integrity="sha512-ZOpEWF/zdnWKFpyY0TMzmZGkhjM9Z4RkW/GMF9X9NtZ6bhDqzAlWfk7NwqHPD+WriepCt3Th6+4jl4w4wkQolA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <script lang="js" src="main.js"></script>
-</head>
-<body>
-    <center>
-        <input type="text" id="fee" placeholder="هزینه" />
-        <input type="text" id="count" placeholder="تعداد" />
-        <input type="text" id="discount" placeholder="تخفیف" />
-        <table>
-            <thead>
-                <tr>
-                    <td>count*fee-discount</td>
-                    <td>count+fee-discount</td>
-                    <td>count/fee-discount</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <formula evaluator="count*fee-discount"></formula>
-                    </td>
-                    <td>
-                        <formula evaluator="count+fee-discount"></formula>
-                    </td>
-                    <td>
-                        <formula evaluator="count/fee-discount"></formula>
-                    </td>
-                </tr>
-            </tbody>
-            <caption>
-                some random formulae for testing
-            </caption>
-        </table>
-    </center>
-</body>
+            caption {
+                caption-side: bottom;
+                padding: 15px 10px 5px;
+                font-style: italic;
+                color: var(--secondary-color);
+                font-weight: 500;
+                margin-top: 10px;
+            }
+
+            formula {
+                font-weight: bold;
+                color: var(--secondary-color);
+                font-size: 1.1em;
+            }
+
+            /* Secondary color accents */
+            .input-label {
+                display: block;
+                margin-bottom: 8px;
+                color: var(--secondary-color);
+                font-weight: 500;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 600px) {
+                center {
+                    padding: 20px 15px;
+                }
+
+                .input-group {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                input {
+                    width: 80%;
+                }
+            }
+        </style>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.2.1/math.js"
+            integrity="sha512-ZOpEWF/zdnWKFpyY0TMzmZGkhjM9Z4RkW/GMF9X9NtZ6bhDqzAlWfk7NwqHPD+WriepCt3Th6+4jl4w4wkQolA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script lang="js" src="main.js"></script>
+    </head>
+    <body>
+        <center>
+            <div class="input-group">
+                <input type="text" id="fee" placeholder="هزینه" />
+                <input type="text" id="count" placeholder="تعداد" />
+                <input type="text" id="discount" placeholder="تخفیف" />
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>count*fee-discount</th>
+                        <th>count+fee-discount</th>
+                        <th>count/fee-discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <formula evaluator="count*fee-discount"></formula>
+                        </td>
+                        <td>
+                            <formula evaluator="count+fee-discount"></formula>
+                        </td>
+                        <td>
+                            <formula evaluator="count/fee-discount"></formula>
+                        </td>
+                    </tr>
+                </tbody>
+                <caption>
+                    some random formulae for testing
+                </caption>
+            </table>
+        </center>
+    </body>
+</html>
